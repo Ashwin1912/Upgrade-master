@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 @Log4j
 public class LandingPage extends BasePage {
-
+		
     @FindBy(name = "desiredAmount")
     private WebElement loanAmount;
 

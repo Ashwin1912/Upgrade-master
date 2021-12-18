@@ -5,6 +5,7 @@
             <class name="com.upgrade.tests.LoanOffersUITest">
                 <methods>
                     <include name="validateOffersTest"/>
+                    <include name="validateDeclineLoanTest"/>
                 </methods>
             </class>
         </classes>

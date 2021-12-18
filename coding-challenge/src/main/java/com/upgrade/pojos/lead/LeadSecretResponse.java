@@ -9,9 +9,11 @@ import java.util.List;
 @Setter
 public class LeadSecretResponse {
     private LoanAppResumptionInfo loanAppResumptionInfo;
+    private BorrowerResumptionInfo borrowerResumptionInfo;
     private List<Object> offers;
     private Object selectedOffer;
     private List<Object> requiredAgreements;
     private List<String> resetOptions;
     private Object originalLoanApp;
+    
 }

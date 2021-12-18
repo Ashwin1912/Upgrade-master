@@ -1,7 +1,9 @@
 package com.upgrade.pages;
 
 import com.upgrade.pojos.Borrower;
+
 import lombok.extern.log4j.Log4j;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

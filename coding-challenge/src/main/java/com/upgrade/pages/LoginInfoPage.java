@@ -1,6 +1,7 @@
 package com.upgrade.pages;
 
 import com.upgrade.pojos.Borrower;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,13 +40,18 @@ public class LoginInfoPage extends BasePage {
     }
 
     // Note : Use java generics to return a different page
-    public SelectOfferPage enterLoginDetails(Borrower randomPerson) {
+    public <P extends BasePage> P enterLoginDetails(Borrower randomPerson, Class<P> pageclass) {
         type(email, randomPerson.getEmail());
         type(password, randomPerson.getPassword());
         selectTermsOfUse();
         click(checkYourRateBtn);
         waitForPage();
-        return new SelectOfferPage(driver);
+        try {
+			return pageclass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
     }
 
     public LoginInfoPage selectTermsOfUse() {
